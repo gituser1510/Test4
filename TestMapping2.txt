@@ -1,0 +1,73 @@
+SET DEFINE OFF;
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (1, 'Administrator');
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (2, 'Project Manager');
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (3, 'Tool Manager');
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (4, 'Quality Analyst');
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (5, 'Review Analyst');
+Insert into ROLE_MASTER
+   (ROLE_ID, ROLE_NAME)
+ Values
+   (6, 'Analyst');
+COMMIT;
+
+
+SET DEFINE OFF;
+Insert into USER_MASTER
+   (USER_ID, USER_NAME, EMAIL_ID, IS_ACTIVE, CREATED_DATE, 
+    IS_LDAP_USER, PASSWD)
+ Values
+   (0, 'administrator', null, 'Y', TO_DATE('01/13/2015 15:12:04', 'MM/DD/YYYY HH24:MI:SS'), 
+    'N', 'admin@123');
+Insert into USER_MASTER
+   (USER_ID, USER_NAME, EMAIL_ID, IS_ACTIVE, CREATED_DATE, 
+    IS_LDAP_USER)
+ Values
+   (1, 'auto.process', null, 'Y', TO_DATE('01/13/2015 15:12:04', 'MM/DD/YYYY HH24:MI:SS'), 
+    'N');
+
+
+COMMIT;
+
+
+SET DEFINE OFF;
+
+Insert into USER_ROLES
+   (UR_ID, USER_ID, ROLE_ID, MODULE, IS_ACTIVE, 
+    CREATED_DATE)
+ Values
+   (0, 0, 1, 'RA', 'Y', 
+    TO_DATE('01/20/2015 11:40:16', 'MM/DD/YYYY HH24:MI:SS'));
+
+Insert into USER_ROLES
+   (UR_ID, USER_ID, ROLE_ID, MODULE, IS_ACTIVE, 
+    CREATED_DATE)
+ Values
+   (1, 1, 5, 'RA', 'Y', 
+    TO_DATE('01/20/2015 11:40:16', 'MM/DD/YYYY HH24:MI:SS'));
+
+Insert into USER_ROLES
+   (UR_ID, USER_ID, ROLE_ID, MODULE, IS_ACTIVE, 
+    CREATED_DATE)
+ Values
+   (2, 1, 4, 'RA', 'Y', 
+    TO_DATE('01/20/2015 11:40:48', 'MM/DD/YYYY HH24:MI:SS'));
+
+COMMIT;
+
+
+
